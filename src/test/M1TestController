@@ -1,0 +1,101 @@
+import javafx.stage.Stage;
+import org.junit.Test;
+import org.testfx.framework.junit.ApplicationTest;
+import org.testfx.matcher.base.NodeMatchers;
+import sample.Main;
+
+import static org.testfx.api.FxAssert.verifyThat;
+
+public class M1TestController extends ApplicationTest {
+
+    private Main main = new Main();
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        main.start(primaryStage);
+    }
+
+    @Test
+    public void testStart() {
+        // invokes controller, then start method, showing first screen
+        // then clicking on play button should take us to second screen
+        clickOn("#startButton");
+        verifyThat("Player Customization", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testEnterName() {
+        clickOn("#startButton");
+
+        clickOn("#namefield");
+        //verifyThat("#namefield", TextInputControlMatchers.hasText("YEET"));
+
+    }
+
+    @Test
+    public void testValidName() {
+        clickOn("#startButton");
+
+        clickOn("#namefield").write("Seventh Sense");
+        clickOn("#btnContinue");
+        verifyThat("#floorLabel", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testInvalidName() {
+        clickOn("#startButton");
+
+        clickOn("#namefield").write(" ");
+        clickOn("#btnContinue");
+        verifyThat("Invalid Username", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testSelectDifficultyEasy() {
+        clickOn("#startButton");
+
+        clickOn("#difficulty");
+        verifyThat("Easy", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testSelectDifficultyMedium() {
+        clickOn("#startButton");
+
+        clickOn("#difficulty");
+        verifyThat("Normal", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testSelectDifficultyHard() {
+        clickOn("#startButton");
+
+        clickOn("#difficulty");
+        verifyThat("Hard", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testSelectWeapon() {
+        clickOn("#startButton");
+        clickOn("#weapon");
+        verifyThat("W1", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testContinue() {
+        clickOn("#startButton");
+        clickOn("#namefield").write("Seventh Sense");
+        clickOn("#btnContinue");
+        verifyThat("#goldLabel", NodeMatchers.isNotNull());
+    }
+
+    @Test
+    public void testGoldAmount() {
+        clickOn("#startButton");
+        clickOn("#namefield").write("Seventh Sense");
+        clickOn("#difficulty");
+        clickOn("Hard");
+        clickOn("#btnContinue");
+        verifyThat("x 100", NodeMatchers.isNotNull());
+    }
+}

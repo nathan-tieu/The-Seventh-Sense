@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.gameover.GameOverController">
+   <children>
+      <ImageView fitHeight="542.0" fitWidth="961.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Lose.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="newGame" layoutX="282.0" layoutY="302.0" mnemonicParsing="false" onAction="#goConfig" prefHeight="46.0" prefWidth="392.0" style="-fx-background-color: white;" text="Play Again">
+         <font>
+            <Font name="Monospaced Bold" size="21.0" />
+         </font>
+      </Button>
+      <Label layoutX="304.0" layoutY="25.0" text="Game Over" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold" size="63.0" />
+         </font>
+      </Label>
+      <Button fx:id="newGame1" layoutX="282.0" layoutY="391.0" mnemonicParsing="false" onAction="#goConfig" prefHeight="46.0" prefWidth="392.0" style="-fx-background-color: white;" text="Exit">
+         <font>
+            <Font name="Monospaced Bold" size="21.0" />
+         </font>
+      </Button>
+      <Label layoutX="281.0" layoutY="122.0" text="Number of Monsters Killed :" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dmgLabel" layoutX="605.0" layoutY="157.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="281.0" layoutY="159.0" text="Amount of Damage Taken: " textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="potionLabel" layoutX="605.0" layoutY="196.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="goldLabel" layoutX="605.0" layoutY="234.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="killLabel" layoutX="605.0" layoutY="120.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Regular" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="281.0" layoutY="236.0" prefWidth="260.0" text="Total Gold Accumulated:" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="281.0" layoutY="198.0" text="Number of Potions Consumed:" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="63.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cat3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="749.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/cat4.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
